@@ -1,0 +1,19 @@
+[
+    {
+        "//": "Example Coordinates for a Mountain Node",
+        "q": 15,
+        "r": 22,
+        "type": "mountain",
+        "city": null,
+        "river_edges": [1, 2] 
+    },
+
+    {
+        "//": "Another Example Coordinates for a Mountain Node",
+        "q": 15,
+        "r": 22,
+        "type": "mountain",
+        "city": null,
+        "river_edges": [1, 2] 
+    }
+]
