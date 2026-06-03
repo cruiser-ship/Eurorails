@@ -14,7 +14,10 @@ KEY_MAPPING = {
     '1': {'type': 'space_sea', 'color': (0, 0, 0), 'label': 'Void/Sea'},       # Black (skips pathfinding edge generation)
     '2': {'type': 'clear',     'color': (0, 255, 0), 'label': 'Clear'},       # Green (ECU 1M base cost)
     '3': {'type': 'mountain',  'color': (0, 255, 255), 'label': 'Mountain'},  # Yellow (ECU 2M base cost)
-    '4': {'type': 'alpine',    'color': (0, 0, 255), 'label': 'Alpine'}       # Red (ECU 5M base cost)
+    '4': {'type': 'alpine',    'color': (0, 0, 255), 'label': 'Alpine'},      # Red (ECU 5M base cost)
+    '5': {'type': 'small_city',  'color': (255, 255, 0), 'label': 'Small City'},   # Cyan
+    '6': {'type': 'medium_city', 'color': (255, 165, 0), 'label': 'Medium City'},  # Orange
+    '7': {'type': 'large_city',  'color': (255, 0, 255), 'label': 'Large City'}    # Magenta
 }
 
 # Arrow key codes from cv2.waitKeyEx — macOS
@@ -92,7 +95,7 @@ def main():
         history = []
         print("=== Eurorails Keyboard Mapping Engine Active (new session) ===")
 
-    print("Commands: [1] Void/Sea | [2] Clear | [3] Mountain | [4] Alpine")
+    print("Commands: [1] Void/Sea | [2] Clear | [3] Mountain | [4] Alpine | [5] Small City | [6] Medium City | [7] Large City")
     print("Controls: [Arrow Keys] Nudge Reticle | [Backspace] Undo Last Node | [Q] Save & Quit | [Esc] Force Quit (no save)")
     print("----------------------------------------------------------------")
 
@@ -164,7 +167,7 @@ def main():
 
                 # Redraw full validation history clear of the removed point
                 display_layer = base_image.copy()
-                for k, node in graph_data.items():
+                for _, node in graph_data.items():
                     cfg = next(item for item in KEY_MAPPING.values() if item["type"] == node["type"])
                     cv2.circle(display_layer, (node["pixel_x"], node["pixel_y"]), 3, cfg["color"], -1)
                 print(f"Reverted to Node: Row {current_row}, Col {current_col}")
