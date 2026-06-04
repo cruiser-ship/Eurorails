@@ -2,13 +2,11 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load graph data
-# Replace 'map_rough_draft.json' with your actual file path
+# Load core graph node data
 try:
     with open('map_rough_draft.json', 'r') as f:
         data = json.load(f)
 except FileNotFoundError:
-    # Fallback mock data for testing if file doesn't exist yet
     data = {
         "graph_data": {
             "r0_c28": {"axial_q": 28, "axial_r": 0, "type": "clear"},
@@ -23,67 +21,64 @@ except FileNotFoundError:
 
 graph_nodes = data.get("graph_data", data)
 
+# Load optional static vector border layers
+borders_data = None
+try:
+    with open('map_borders.json', 'r') as f:
+        borders_data = json.load(f)
+except FileNotFoundError:
+    print("Warning: 'map_borders.json' not found. Visualization will render without background water borders.")
+
 # Setup plotting canvas
 fig, ax = plt.subplots(figsize=(14, 10))
 ax.set_aspect('equal')
-ax.set_facecolor('#f0f5fa') # Light blue background to represent physical sea borders implicitly
+ax.set_facecolor('#f0f5fa') # Light blue background matching sea layout aesthetic
 
 # Track limits to auto-scale the pure geometric canvas
 x_coords = []
 y_coords = []
-
-# Lookup list for click detection: (x_graph, y_graph, axial_q, axial_r, node_type, node_id)
 plotted_nodes = []
 
-# Process nodes
+# --- LAYER 1: RENDER BACKGROUND WATER BORDERS (IF AVAILABLE) ---
+if borders_data and "water_borders" in borders_data:
+    for segment in borders_data["water_borders"]:
+        coords = segment["coordinates"]
+        xs = [pt[0] for pt in coords]
+        ys = [pt[1] for pt in coords]
+        ax.plot(xs, ys, color='#0066cc', linewidth=2.5, solid_capstyle='round', zorder=1)
+
+# --- LAYER 2: PROCESS INTERACTIVE GRAPH NODES ---
 for node_id, node in graph_nodes.items():
     node_type = node.get("type")
     
-    # "space_sea: nothing, doesn't appear"
     if node_type == "space_sea" or not node_type:
         continue
         
     q = node["axial_q"]
     r = node["axial_r"]
     
-    # --- PURE AXIAL TO CARTESIAN GEOMETRY TRANSFORMATION ---
-    # For a flat-topped hexagonal/staggered triangular lattice layout:
-    # Column horizontal spacing is 1.0, Row vertical spacing scales by sin(60 deg) = sqrt(3)/2
     x_graph = q
-    y_graph = -r * (np.sqrt(3) / 2) # Inverted so higher row numbers go downward down the screen
+    y_graph = -r * (np.sqrt(3) / 2)
     
     x_coords.append(x_graph)
     y_coords.append(y_graph)
     
-    # Custom rendering rules per requirement specifications
+    # Custom rendering rules per requirement specifications (Using zorder=2 to sit cleanly over borders)
     if node_type == "clear":
-        # clear: black dot
-        ax.plot(x_graph, y_graph, 'ko', markersize=2)
-        
+        ax.plot(x_graph, y_graph, 'ko', markersize=2, zorder=2)
     elif node_type == "mountain":
-        # mountain: solid triangle
-        ax.plot(x_graph, y_graph, marker='^', color='#e6b800', markersize=2, linestyle='None')
-        
+        ax.plot(x_graph, y_graph, marker='^', color='#e6b800', markersize=2, linestyle='None', zorder=2)
     elif node_type == "alpine":
-        # alpine: bordered triangle
         ax.plot(x_graph, y_graph, marker='^', color='#ff3333', markersize=2, 
-                markeredgecolor='red', markeredgewidth=1.5, linestyle='None')
-        
+                markeredgecolor='red', markeredgewidth=1.5, linestyle='None', zorder=2)
     elif node_type == "small_city":
-        # small city: solid circle (bigger than the normal point)
-        ax.plot(x_graph, y_graph, marker='o', color='#00cccc', markersize=5, linestyle='None')
-        
+        ax.plot(x_graph, y_graph, marker='o', color='#00cccc', markersize=5, linestyle='None', zorder=2)
     elif node_type == "medium_city":
-        # medium city: solid square
-        ax.plot(x_graph, y_graph, marker='s', color='#ff9900', markersize=5, linestyle='None')
-        
+        ax.plot(x_graph, y_graph, marker='s', color='#ff9900', markersize=5, linestyle='None', zorder=2)
     elif node_type == "large_city":
-        # large city: hexagon
-        ax.plot(x_graph, y_graph, marker='h', color='#cc00cc', markersize=5, linestyle='None')
-        
+        ax.plot(x_graph, y_graph, marker='h', color='#cc00cc', markersize=5, linestyle='None', zorder=2)
     elif node_type == "ferry":
-        # ferry: fallback styling (represented cleanly as an open diamond)
-        ax.plot(x_graph, y_graph, marker='d', color='#009999', markersize=2, linestyle='None')
+        ax.plot(x_graph, y_graph, marker='d', color='#009999', markersize=2, linestyle='None', zorder=2)
 
     plotted_nodes.append((x_graph, y_graph, q, r, node_type, node_id))
 
@@ -102,7 +97,7 @@ tooltip = ax.annotate(
     "", xy=(0, 0), xytext=(10, 10),
     textcoords="offset points",
     bbox=dict(boxstyle="round,pad=0.3", fc="lightyellow", ec="gray", alpha=0.9),
-    fontsize=9, visible=False
+    fontsize=9, visible=False, zorder=3
 )
 _last_clicked = [None]  # mutable container to track toggle state
 
@@ -128,7 +123,7 @@ def on_click(event):
             tooltip.set_visible(False)
             _last_clicked[0] = None
         else:
-            tooltip.set_text(f"q={q}, r={r}\n{ntype}")
+            tooltip.set_text(f"q={q}, r={r}\n{ntype}\nID: {nid}")
             tooltip.xy = (x, y)
             tooltip.set_visible(True)
             _last_clicked[0] = nid
