@@ -2352,5 +2352,1103 @@
             "name": "Tiber",
             "type": "river"
         }
+    ],
+    "r42_c16": [
+        {
+            "neighbor": "r43_c16",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r43_c16": [
+        {
+            "neighbor": "r42_c16",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c17",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r43_c17": [
+        {
+            "neighbor": "r43_c16",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c16",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c17",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r44_c16": [
+        {
+            "neighbor": "r43_c17",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r44_c17": [
+        {
+            "neighbor": "r43_c17",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c18",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c18",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r43_c18": [
+        {
+            "neighbor": "r44_c17",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r44_c18": [
+        {
+            "neighbor": "r44_c17",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c18",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r45_c18": [
+        {
+            "neighbor": "r44_c18",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c19",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r45_c19": [
+        {
+            "neighbor": "r45_c18",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c18",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r46_c18": [
+        {
+            "neighbor": "r45_c19",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c19",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r46_c19": [
+        {
+            "neighbor": "r46_c18",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c19",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r47_c19": [
+        {
+            "neighbor": "r46_c19",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c20",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c19",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r47_c20": [
+        {
+            "neighbor": "r47_c19",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r48_c19": [
+        {
+            "neighbor": "r47_c19",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c18",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c19",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c20",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r48_c18": [
+        {
+            "neighbor": "r48_c19",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r49_c19": [
+        {
+            "neighbor": "r48_c19",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r49_c20": [
+        {
+            "neighbor": "r48_c19",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c20",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c21",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r50_c20",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r48_c20": [
+        {
+            "neighbor": "r49_c20",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r49_c21": [
+        {
+            "neighbor": "r49_c20",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r50_c20": [
+        {
+            "neighbor": "r49_c20",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r50_c19",
+            "name": "Ebro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r51_c20",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r50_c19": [
+        {
+            "neighbor": "r50_c20",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r51_c20": [
+        {
+            "neighbor": "r50_c20",
+            "name": "Ebro",
+            "type": "river"
+        }
+    ],
+    "r41_c5": [
+        {
+            "neighbor": "r42_c4",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c5",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r42_c4": [
+        {
+            "neighbor": "r41_c5",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r42_c5": [
+        {
+            "neighbor": "r41_c5",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r41_c6",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r41_c6": [
+        {
+            "neighbor": "r42_c5",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c6",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r42_c6": [
+        {
+            "neighbor": "r41_c6",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r41_c7",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c7",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r41_c7": [
+        {
+            "neighbor": "r42_c6",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r42_c7": [
+        {
+            "neighbor": "r42_c6",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c7",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c8",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c7": [
+        {
+            "neighbor": "r42_c7",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c8": [
+        {
+            "neighbor": "r42_c7",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c8",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r42_c8": [
+        {
+            "neighbor": "r43_c8",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c9",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c9": [
+        {
+            "neighbor": "r42_c8",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c9",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r42_c9": [
+        {
+            "neighbor": "r43_c9",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c10",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c10": [
+        {
+            "neighbor": "r42_c9",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c10",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c11",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r42_c10": [
+        {
+            "neighbor": "r43_c10",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c11": [
+        {
+            "neighbor": "r43_c10",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c10",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c11",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r44_c10": [
+        {
+            "neighbor": "r43_c11",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r44_c11": [
+        {
+            "neighbor": "r43_c11",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c12",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c12": [
+        {
+            "neighbor": "r44_c11",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c12",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r44_c12": [
+        {
+            "neighbor": "r43_c12",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c13",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c13": [
+        {
+            "neighbor": "r44_c12",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c13",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r44_c13": [
+        {
+            "neighbor": "r43_c13",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c14",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c14",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r45_c14": [
+        {
+            "neighbor": "r44_c14",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c15",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r43_c14": [
+        {
+            "neighbor": "r44_c13",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r44_c14": [
+        {
+            "neighbor": "r44_c13",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c14",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r45_c15": [
+        {
+            "neighbor": "r45_c14",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c14",
+            "name": "Douro",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c15",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r46_c14": [
+        {
+            "neighbor": "r45_c15",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r46_c15": [
+        {
+            "neighbor": "r45_c15",
+            "name": "Douro",
+            "type": "river"
+        }
+    ],
+    "r46_c0": [
+        {
+            "neighbor": "r47_c1",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r47_c1": [
+        {
+            "neighbor": "r46_c0",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c1",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r46_c1": [
+        {
+            "neighbor": "r47_c1",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c2",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c2",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r47_c2": [
+        {
+            "neighbor": "r46_c1",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r46_c2": [
+        {
+            "neighbor": "r46_c1",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c2",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c3",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r45_c2": [
+        {
+            "neighbor": "r46_c2",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r45_c3": [
+        {
+            "neighbor": "r46_c2",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c3",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r45_c4": [
+        {
+            "neighbor": "r46_c3",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c4",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r46_c3": [
+        {
+            "neighbor": "r45_c4",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c3",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r45_c5": [
+        {
+            "neighbor": "r46_c4",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r46_c4": [
+        {
+            "neighbor": "r45_c5",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c4",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c5",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r46_c5": [
+        {
+            "neighbor": "r46_c4",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c6",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c5",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r47_c6": [
+        {
+            "neighbor": "r46_c5",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c6",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r46_c6": [
+        {
+            "neighbor": "r47_c6",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c7",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r47_c5": [
+        {
+            "neighbor": "r46_c5",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r47_c7": [
+        {
+            "neighbor": "r46_c6",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c7",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c8",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r46_c7": [
+        {
+            "neighbor": "r47_c7",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r47_c8": [
+        {
+            "neighbor": "r47_c7",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c7",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c8",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r48_c7": [
+        {
+            "neighbor": "r47_c8",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r48_c8": [
+        {
+            "neighbor": "r47_c8",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r47_c9",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c9",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r47_c9": [
+        {
+            "neighbor": "r48_c8",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r48_c9": [
+        {
+            "neighbor": "r48_c8",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c9",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c10",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c10",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r49_c9": [
+        {
+            "neighbor": "r48_c9",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r48_c10": [
+        {
+            "neighbor": "r48_c9",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c10",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c11",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r49_c10": [
+        {
+            "neighbor": "r48_c9",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c10",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r49_c11": [
+        {
+            "neighbor": "r48_c10",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r48_c11",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r48_c11": [
+        {
+            "neighbor": "r49_c11",
+            "name": "Tagus",
+            "type": "river"
+        },
+        {
+            "neighbor": "r49_c12",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r49_c12": [
+        {
+            "neighbor": "r48_c11",
+            "name": "Tagus",
+            "type": "river"
+        }
+    ],
+    "r54_c3": [
+        {
+            "neighbor": "r55_c4",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c4",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r55_c4": [
+        {
+            "neighbor": "r54_c3",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r54_c4": [
+        {
+            "neighbor": "r54_c3",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c4",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c5",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r53_c4": [
+        {
+            "neighbor": "r54_c4",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r53_c5": [
+        {
+            "neighbor": "r54_c4",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c5",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r54_c5": [
+        {
+            "neighbor": "r53_c5",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c6",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r53_c6": [
+        {
+            "neighbor": "r54_c5",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c6",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r54_c6": [
+        {
+            "neighbor": "r53_c6",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c7",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r53_c7": [
+        {
+            "neighbor": "r54_c6",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c7",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r54_c7": [
+        {
+            "neighbor": "r53_c7",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c8",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r53_c8": [
+        {
+            "neighbor": "r54_c7",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c8",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r54_c8": [
+        {
+            "neighbor": "r53_c8",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c9",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c9",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r53_c9": [
+        {
+            "neighbor": "r54_c8",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r54_c9": [
+        {
+            "neighbor": "r54_c8",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r55_c9",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r55_c10",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r55_c9": [
+        {
+            "neighbor": "r54_c9",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r55_c10": [
+        {
+            "neighbor": "r54_c9",
+            "name": "Guadalquivir",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c10",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
+    ],
+    "r54_c10": [
+        {
+            "neighbor": "r55_c10",
+            "name": "Guadalquivir",
+            "type": "river"
+        }
     ]
 }

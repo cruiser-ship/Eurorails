@@ -10415,6 +10415,15 @@
             "pixel_x": 716,
             "pixel_y": 1183
         },
+        "r41_c18": {
+            "row": 41,
+            "col": 18,
+            "axial_q": 17.5,
+            "axial_r": 41,
+            "type": "clear",
+            "pixel_x": 749,
+            "pixel_y": 1183
+        },
         "r41_c20": {
             "row": 41,
             "col": 20,
