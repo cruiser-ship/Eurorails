@@ -1,0 +1,37 @@
+{
+    "r21_c36": {
+        "id": "r21_c36",
+        "row": 21,
+        "col": 36,
+        "axial_q": 35.5,
+        "axial_r": 21,
+        "type": "large_city",
+        "city_name": "Cologne",
+        "neighbors": {
+            "r22_c36": {
+            "river": true,
+            "river_name": "Rhein",
+            "lake": false,
+            "lake_name": null
+            },
+            "r22_c35": {
+                "river": true,
+                "river_name": "Rhein",
+                "lake": false,
+                "lake_name": null
+            },
+            "r21_c37": {
+                "river": false,
+                "river_name": null,
+                "lake": false,
+                "lake_name": null
+            },
+            "r20_c36": {
+                "river": false,
+                "river_name": null,
+                "lake": false,
+                "lake_name": null
+            }
+        }
+    }
+}

@@ -5,21 +5,17 @@ import matplotlib.pyplot as plt
 # Load core graph node data
 try:
     with open('map_rough_draft.json', 'r') as f:
-        data = json.load(f)
+        graph_nodes = json.load(f)
 except FileNotFoundError:
-    data = {
-        "graph_data": {
-            "r0_c28": {"axial_q": 28, "axial_r": 0, "type": "clear"},
-            "r1_c28": {"axial_q": 27.5, "axial_r": 1, "type": "mountain"},
-            "r2_c29": {"axial_q": 29, "axial_r": 2, "type": "alpine"},
-            "r3_c29": {"axial_q": 28.5, "axial_r": 3, "type": "small_city"},
-            "r4_c30": {"axial_q": 30, "axial_r": 4, "type": "medium_city"},
-            "r5_c30": {"axial_q": 29.5, "axial_r": 5, "type": "large_city"},
-            "r6_c31": {"axial_q": 31, "axial_r": 6, "type": "ferry"}
-        }
+    graph_nodes = {
+        "r0_c28": {"axial_q": 28, "axial_r": 0, "type": "clear"},
+        "r1_c28": {"axial_q": 27.5, "axial_r": 1, "type": "mountain"},
+        "r2_c29": {"axial_q": 29, "axial_r": 2, "type": "alpine"},
+        "r3_c29": {"axial_q": 28.5, "axial_r": 3, "type": "small_city"},
+        "r4_c30": {"axial_q": 30, "axial_r": 4, "type": "medium_city"},
+        "r5_c30": {"axial_q": 29.5, "axial_r": 5, "type": "large_city"},
+        "r6_c31": {"axial_q": 31, "axial_r": 6, "type": "ferry"}
     }
-
-graph_nodes = data.get("graph_data", data)
 
 # Load optional static vector border layers
 borders_data = None

@@ -15,8 +15,7 @@ RIVERS_DATA_PATH = "rivers.json"
 # Load core map layout graph node data
 try:
     with open(MAP_DATA_PATH, 'r') as f:
-        map_raw = json.load(f)
-    graph_nodes = map_raw.get("graph_data", map_raw)
+        graph_nodes = json.load(f)
 except FileNotFoundError:
     print(f"Error: Required baseline layout data '{MAP_DATA_PATH}' not found.")
     graph_nodes = {}
