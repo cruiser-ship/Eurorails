@@ -6877,8 +6877,8 @@
     "r20_c31": [
         {
             "neighbor": "r21_c31",
-            "name": "Thames",
-            "type": "river"
+            "name": null,
+            "type": "lake"
         },
         {
             "neighbor": "r20_c30",
@@ -6889,8 +6889,8 @@
     "r21_c31": [
         {
             "neighbor": "r20_c31",
-            "name": "Thames",
-            "type": "river"
+            "name": null,
+            "type": "lake"
         },
         {
             "neighbor": "r20_c30",
