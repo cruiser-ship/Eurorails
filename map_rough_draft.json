@@ -173,6 +173,15 @@
             "pixel_x": 2155,
             "pixel_y": 74
         },
+        "r1_c27": {
+            "row": 1,
+            "col": 27,
+            "axial_q": 26.5,
+            "axial_r": 1,
+            "type": "clear",
+            "pixel_x": 1052,
+            "pixel_y": 102
+        },
         "r1_c28": {
             "row": 1,
             "col": 28,
