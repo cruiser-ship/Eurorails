@@ -2024,5 +2024,333 @@
             "name": "Rhone",
             "type": "river"
         }
+    ],
+    "r42_c36": [
+        {
+            "neighbor": "r43_c37",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r43_c37": [
+        {
+            "neighbor": "r42_c36",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c37",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r42_c37": [
+        {
+            "neighbor": "r43_c37",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c38",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r43_c38": [
+        {
+            "neighbor": "r42_c37",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r42_c38",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c39",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r42_c38": [
+        {
+            "neighbor": "r43_c38",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r43_c39": [
+        {
+            "neighbor": "r43_c38",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c38",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c39",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r44_c38": [
+        {
+            "neighbor": "r43_c39",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r44_c39": [
+        {
+            "neighbor": "r43_c39",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c40",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r43_c40": [
+        {
+            "neighbor": "r44_c39",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c40",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r44_c40": [
+        {
+            "neighbor": "r43_c40",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r43_c41",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c41",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r43_c41": [
+        {
+            "neighbor": "r44_c40",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r44_c41": [
+        {
+            "neighbor": "r44_c40",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c41",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c42",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r45_c41": [
+        {
+            "neighbor": "r44_c41",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r45_c42": [
+        {
+            "neighbor": "r44_c41",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r44_c42",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c43",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r44_c42": [
+        {
+            "neighbor": "r45_c42",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r45_c44": [
+        {
+            "neighbor": "r46_c44",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c43",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r46_c44": [
+        {
+            "neighbor": "r45_c44",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r46_c43": [
+        {
+            "neighbor": "r45_c44",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c43",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r45_c43": [
+        {
+            "neighbor": "r46_c43",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r46_c42",
+            "name": "Po",
+            "type": "river"
+        },
+        {
+            "neighbor": "r45_c42",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r46_c42": [
+        {
+            "neighbor": "r45_c43",
+            "name": "Po",
+            "type": "river"
+        }
+    ],
+    "r54_c42": [
+        {
+            "neighbor": "r55_c43",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r55_c43": [
+        {
+            "neighbor": "r54_c42",
+            "name": "Tiber",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c43",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r54_c43": [
+        {
+            "neighbor": "r55_c43",
+            "name": "Tiber",
+            "type": "river"
+        },
+        {
+            "neighbor": "r55_c44",
+            "name": "Tiber",
+            "type": "river"
+        },
+        {
+            "neighbor": "r54_c44",
+            "name": "Tiber",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c44",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r55_c44": [
+        {
+            "neighbor": "r54_c43",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r54_c44": [
+        {
+            "neighbor": "r54_c43",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r53_c44": [
+        {
+            "neighbor": "r54_c43",
+            "name": "Tiber",
+            "type": "river"
+        },
+        {
+            "neighbor": "r53_c43",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r53_c43": [
+        {
+            "neighbor": "r53_c44",
+            "name": "Tiber",
+            "type": "river"
+        },
+        {
+            "neighbor": "r52_c43",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r52_c43": [
+        {
+            "neighbor": "r53_c43",
+            "name": "Tiber",
+            "type": "river"
+        },
+        {
+            "neighbor": "r52_c42",
+            "name": "Tiber",
+            "type": "river"
+        }
+    ],
+    "r52_c42": [
+        {
+            "neighbor": "r52_c43",
+            "name": "Tiber",
+            "type": "river"
+        }
     ]
 }
