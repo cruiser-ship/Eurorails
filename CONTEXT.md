@@ -40,6 +40,15 @@ An obstacle that lives on the **edge** between two adjacent nodes, stored bidire
 
 Each node has `axial_q` (column) and `axial_r` (row) in an axial hex coordinate system. Odd rows are offset by −0.5 in q. Screen projection: `x = axial_q`, `y = −axial_r × (√3 / 2)`.
 
+## Resource data
+
+Game demand cards reference resources that cities produce. Two JSON files encode this mapping:
+
+- **`resources_to_cities.json`** — Each resource entry has `name`, `amount` (demand card value), and `cities` (list of producing cities). 29 resources total; amounts are 3 ECU (most) or 4 ECU (Beer, Cheese, Machinery, Oil, Wine).
+- **`cities_to_resources.json`** — inverse index. Maps each city name → list of resources it produces. Includes cities with no resources (empty list: Berlin, Madrid, Milano, Paris, Roma, Venezia). Derived from `resources_to_cities.json`; must stay in sync with it.
+
+When updating resource/city data, edit `resources_to_cities.json` first, then update `cities_to_resources.json` to match.
+
 ## Tool taxonomy
 
 ### Interactive editors (project root)

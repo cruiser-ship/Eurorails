@@ -1,0 +1,147 @@
+{
+  "Bauxite": {
+    "name": "Bauxite",
+    "amount": "3",
+    "cities": ["Budapest", "Marseille"]
+  },
+  "Beer": {
+    "name": "Beer",
+    "amount": "4",
+    "cities": ["Dublin", "Frankfurt", "München", "Praha"]
+  },
+  "Cars": {
+    "name": "Cars",
+    "amount": "3",
+    "cities": ["Manchester", "München", "Stuttgart", "Torino"]
+  },
+  "Cattle": {
+    "name": "Cattle",
+    "amount": "3",
+    "cities": ["Bern", "Nantes"]
+  },
+  "Cheese": {
+    "name": "Cheese",
+    "amount": "4",
+    "cities": ["Århus", "Bern", "Holland", "København"]
+  },
+  "China": {
+    "name": "China",
+    "amount": "3",
+    "cities": ["Birmingham", "Leipzig"]
+  },
+  "Chocolate": {
+    "name": "Chocolate",
+    "amount": "3",
+    "cities": ["Bruxelles", "Zürich"]
+  },
+  "Coal": {
+    "name": "Coal",
+    "amount": "3",
+    "cities": ["Cardiff", "Krakow", "Wroclaw"]
+  },
+  "Copper": {
+    "name": "Copper",
+    "amount": "3",
+    "cities": ["Beograd", "Wroclaw"]
+  },
+  "Cork": {
+    "name": "Cork",
+    "amount": "3",
+    "cities": ["Lisboa", "Sevilla"]
+  },
+  "Fish": {
+    "name": "Fish",
+    "amount": "3",
+    "cities": ["Aberdeen", "Oslo", "Porto"]
+  },
+  "Flowers": {
+    "name": "Flowers",
+    "amount": "3",
+    "cities": ["Holland"]
+  },
+  "Ham": {
+    "name": "Ham",
+    "amount": "3",
+    "cities": ["Warszawa"]
+  },
+  "Hops": {
+    "name": "Hops",
+    "amount": "3",
+    "cities": ["Cardiff"]
+  },
+  "Imports": {
+    "name": "Imports",
+    "amount": "3",
+    "cities": ["Antwerpen", "Hamburg"]
+  },
+  "Iron": {
+    "name": "Iron",
+    "amount": "3",
+    "cities": ["Birmingham", "Kaliningrad", "Stockholm"]
+  },
+  "Labor": {
+    "name": "Labor",
+    "amount": "3",
+    "cities": ["Beograd", "Sarajevo", "Zagreb"]
+  },
+  "Machinery": {
+    "name": "Machinery",
+    "amount": "4",
+    "cities": ["Barcelona", "Bremen", "Göteborg", "Nantes"]
+  },
+  "Marble": {
+    "name": "Marble",
+    "amount": "3",
+    "cities": ["Firenze"]
+  },
+  "Oil": {
+    "name": "Oil",
+    "amount": "4",
+    "cities": ["Aberdeen", "Beograd", "Newcastle", "Oslo"]
+  },
+  "Oranges": {
+    "name": "Oranges",
+    "amount": "3",
+    "cities": ["Sevilla", "Valencia"]
+  },
+  "Potatoes": {
+    "name": "Potatoes",
+    "amount": "3",
+    "cities": ["Belfast", "Lodz", "Szczecin"]
+  },
+  "Sheep": {
+    "name": "Sheep",
+    "amount": "3",
+    "cities": ["Bilbao", "Cork", "Glasgow"]
+  },
+  "Steel": {
+    "name": "Steel",
+    "amount": "3",
+    "cities": ["Birmingham", "Luxembourg", "Ruhr"]
+  },
+  "Tobacco": {
+    "name": "Tobacco",
+    "amount": "3",
+    "cities": ["Napoli"]
+  },
+  "Tourists": {
+    "name": "Tourists",
+    "amount": "3",
+    "cities": ["London", "Ruhr"]
+  },
+  "Wheat": {
+    "name": "Wheat",
+    "amount": "3",
+    "cities": ["Lyon", "Toulouse"]
+  },
+  "Wine": {
+    "name": "Wine",
+    "amount": "4",
+    "cities": ["Bordeaux", "Frankfurt", "Porto", "Wien"]
+  },
+  "Wood": {
+    "name": "Wood",
+    "amount": "3",
+    "cities": ["Oslo", "Sarajevo", "Stockholm"]
+  }
+}
