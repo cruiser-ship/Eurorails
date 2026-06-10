@@ -15,5 +15,39 @@
       "resource_name": "Oil",
       "amount": 17
     }
+  ],
+  [
+    {
+      "city_name": "Holland",
+      "resource_name": "Oranges",
+      "amount": 33
+    },
+    {
+      "city_name": "Roma",
+      "resource_name": "Cheese",
+      "amount": 19
+    },
+    {
+      "city_name": "Newcastle",
+      "resource_name": "Beer",
+      "amount": 14
+    }
+  ],
+  [
+    {
+      "city_name": "Valencia",
+      "resource_name": "Tourists",
+      "amount": 35
+    },
+    {
+      "city_name": "Lisboa",
+      "resource_name": "Sheep",
+      "amount": 17
+    },
+    {
+      "city_name": "Oslo",
+      "resource_name": "Potatoes",
+      "amount": 28
+    }
   ]
 ]
