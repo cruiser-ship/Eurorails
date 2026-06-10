@@ -49,5 +49,73 @@
       "resource_name": "Potatoes",
       "amount": 28
     }
+  ],
+  [
+    {
+      "city_name": "Milano",
+      "resource_name": "Machinery",
+      "amount": 20
+    },
+    {
+      "city_name": "Aberdeen",
+      "resource_name": "Steel",
+      "amount": 17
+    },
+    {
+      "city_name": "Roma",
+      "resource_name": "Tourists",
+      "amount": 28
+    }
+  ],
+  [
+    {
+      "city_name": "Madrid",
+      "resource_name": "Machinery",
+      "amount": 11
+    },
+    {
+      "city_name": "Aberdeen",
+      "resource_name": "Labor",
+      "amount": 48
+    },
+    {
+      "city_name": "Bruxelles",
+      "resource_name": "Potatoes",
+      "amount": 17
+    }
+  ],
+  [
+    {
+      "city_name": "Paris",
+      "resource_name": "Hops",
+      "amount": 13
+    },
+    {
+      "city_name": "Stockholm",
+      "resource_name": "Copper",
+      "amount": 36
+    },
+    {
+      "city_name": "Napoli",
+      "resource_name": "Chocolate",
+      "amount": 21
+    }
+  ],
+  [
+    {
+      "city_name": "Milano",
+      "resource_name": "Imports",
+      "amount": 17
+    },
+    {
+      "city_name": "Belfast",
+      "resource_name": "Machinery",
+      "amount": 30
+    },
+    {
+      "city_name": "Budapest",
+      "resource_name": "Wood",
+      "amount": 12
+    }
   ]
 ]
