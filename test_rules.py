@@ -500,6 +500,20 @@ def test_track_fee_insufficient_funds():
 
 run("move on opponent track with < 4M ECU fails", test_track_fee_insufficient_funds)
 
+def test_track_fee_once_per_opponent_per_turn():
+    # Two consecutive edges both owned by p2; fee should be 4M total, not 8M
+    p1 = make_player("p1", "r19_c29", ecu=50, owned_edges=set())
+    p2 = make_player("p2", "r19_c29", ecu=10,
+                     owned_edges={edge("r19_c29", "r19_c28"), edge("r19_c28", "r19_c27")})
+    gs = make_game([p1, p2])
+    result = execute_operate(gs, "p1", [MoveTo("r19_c28"), MoveTo("r19_c27")])
+    assert result.ok, f"two moves on opponent track should succeed: {result.error}"
+    assert result.fees_charged.get("p2") == 4, f"expected fee of 4 (once per turn), got {result.fees_charged}"
+    assert p1.ecu == 50 - 4
+    assert p2.ecu == 10 + 4
+
+run("track fee charged once per opponent per turn", test_track_fee_once_per_opponent_per_turn)
+
 def test_commit_ferry():
     belfast = "r7_c25"  # ferry_small_city, ferry_link.to = r7_c26
     owned = {edge("r7_c25", "r7_c24")} if "r7_c24" in MAP_DATA["r7_c25"]["neighbors"] else set()

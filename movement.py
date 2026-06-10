@@ -128,6 +128,7 @@ def _execute_move_to(
     if train.remaining_movement < 1:
         return "no movement remaining"
 
+    fee_opponent: str | None = None
     # Track access
     edge = frozenset({train.current_node, action.node_id})
     if _is_major_city_interior(map_data, train.current_node, action.node_id):
@@ -138,11 +139,12 @@ def _execute_move_to(
         opponent = _find_opponent_owner(edge, player.player_id, all_players)
         if opponent is None:
             return "no track on this edge"
-        # Must be able to afford the usage fee (4M per turn total)
-        fees_so_far = sum(player.track_fees_owed.values())
-        if player.ecu - fees_so_far < 4:
-            return "insufficient funds for track usage fee"
-        player.track_fees_owed[opponent] = player.track_fees_owed.get(opponent, 0) + 4
+        # Fee is 4M once per opponent per turn — only check affordability first time
+        if opponent not in player.track_fees_owed:
+            fees_so_far = sum(player.track_fees_owed.values())
+            if player.ecu - fees_so_far < 4:
+                return "insufficient funds for track usage fee"
+        fee_opponent = opponent
 
     # Reversing rule: blocked on non-city nodes
     if (
@@ -153,6 +155,8 @@ def _execute_move_to(
         return "cannot reverse direction on non-city node"
 
     # Apply
+    if fee_opponent and fee_opponent not in player.track_fees_owed:
+        player.track_fees_owed[fee_opponent] = 4
     train.previous_node = train.current_node
     train.current_node = action.node_id
     train.remaining_movement -= 1
@@ -266,7 +270,7 @@ def _execute_deliver(
         f"{player.player_id} delivered {action.resource} to {city_name} "
         f"for {matched_route.amount}M ECU"
     )
-    # ECU payout stubbed — log only (economy deferred to future phase)
+    player.ecu += matched_route.amount
 
     # Discard card and draw replacement
     player.hand.remove(matched_card)
