@@ -159,16 +159,12 @@ def _validate_build_edge(
         if edge in p.owned_edges:
             return f"right-of-way conflict: {p.player_id} already owns this edge", 0, milepost_touches
 
-    # Connectivity
+    # Connectivity: from_node must be a major city (universally accessible) or in existing network
     all_owned = player.owned_edges | staged_edges
     reachable_nodes = {n for e in all_owned for n in e}
-    if not all_owned:
-        # First track ever: must start from a major city
-        if map_data[from_node]["type"] != MAJOR_CITY_TYPE:
-            return "first track must start from a major city", 0, milepost_touches
-    else:
-        if from_node not in reachable_nodes:
-            return f"{from_node} is not connected to your existing track", 0, milepost_touches
+    from_is_major_city = map_data[from_node]["type"] == MAJOR_CITY_TYPE
+    if not from_is_major_city and from_node not in reachable_nodes:
+        return f"{from_node} must be a major city or connected to your existing track", 0, milepost_touches
 
     # Major-city milepost limit (max 2 outer-border sections per turn)
     is_major_city_border = (

@@ -63,9 +63,9 @@ def execute_operate(
         if isinstance(action, MoveTo):
             error = _execute_move_to(game_state.map_data, player, game_state.players, action)
         elif isinstance(action, PickUp):
-            error = _execute_pickup(game_state.map_data, player, game_state.resource_index, action)
+            error = _execute_pickup(game_state.map_data, player, game_state.resource_index, game_state.resource_supply, action)
         elif isinstance(action, DropOff):
-            error = _execute_dropoff(player, action)
+            error = _execute_dropoff(player, game_state.resource_supply, action)
         elif isinstance(action, Deliver):
             error, log_entry = _execute_deliver(game_state.map_data, player, game_state, action)
             if log_entry:
@@ -182,6 +182,7 @@ def _execute_pickup(
     map_data: dict,
     player: PlayerState,
     city_index: dict[str, list[str]],
+    resource_supply: dict[str, int],
     action: PickUp,
 ) -> str | None:
     train = player.train
@@ -201,19 +202,24 @@ def _execute_pickup(
     if len(train.cargo) >= train.cargo_capacity():
         return "cargo full"
 
-    # No ECU deduction — pickup is free
+    if resource_supply.get(action.resource, 0) <= 0:
+        return f"{action.resource} supply exhausted"
+
     train.cargo.append(action.resource)
+    resource_supply[action.resource] -= 1
     return None
 
 
 def _execute_dropoff(
     player: PlayerState,
+    resource_supply: dict[str, int],
     action: DropOff,
 ) -> str | None:
     train = player.train
     if action.resource not in train.cargo:
         return f"{action.resource} not in cargo"
     train.cargo.remove(action.resource)
+    resource_supply[action.resource] = resource_supply.get(action.resource, 0) + 1
     return None
 
 
@@ -253,6 +259,9 @@ def _execute_deliver(
 
     # Apply delivery
     train.cargo.remove(action.resource)
+    game_state.resource_supply[action.resource] = (
+        game_state.resource_supply.get(action.resource, 0) + 1
+    )
     log_entry = (
         f"{player.player_id} delivered {action.resource} to {city_name} "
         f"for {matched_route.amount}M ECU"

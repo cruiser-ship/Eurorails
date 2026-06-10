@@ -121,6 +121,7 @@ class GameState:
     map_data: dict[str, dict]          # master_map.json loaded once
     city_index: dict[str, list[str]]   # city_name -> [node_ids]
     resource_index: dict[str, list[str]]  # city_name -> [resource_names]
+    resource_supply: dict[str, int]      # resource_name -> available count globally
     players: list[PlayerState]         # ordered by turn order
     current_player_index: int
     phase: GamePhase
@@ -204,6 +205,13 @@ def build_city_index(map_data: dict[str, dict]) -> dict[str, list[str]]:
         if name:
             index.setdefault(name, []).append(node_id)
     return index
+
+
+def load_resource_supply(path: str = "resources_to_cities.json") -> dict[str, int]:
+    """resource_name -> global supply count from resources_to_cities.json."""
+    with open(path, encoding="utf-8") as f:
+        raw = json.load(f)
+    return {name: int(entry["amount"]) for name, entry in raw.items()}
 
 
 def load_resource_index(path: str = "cities_to_resources.json") -> dict[str, list[str]]:

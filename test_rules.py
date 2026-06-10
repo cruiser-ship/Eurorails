@@ -15,6 +15,7 @@ from game_state import (
     TrainState,
     build_city_index,
     load_map,
+    load_resource_supply,
     load_resource_index,
     load_route_deck,
 )
@@ -28,6 +29,7 @@ from track_builder import execute_build, cost_of_edge, BuildEdge, UpgradeTrain
 MAP_DATA = load_map()
 CITY_INDEX = build_city_index(MAP_DATA)
 RESOURCE_INDEX = load_resource_index()
+RESOURCE_SUPPLY = load_resource_supply()
 
 
 def make_train(node_id: str, loco=LocoType.FREIGHT, prev=None, cargo=None, ferry=False) -> TrainState:
@@ -53,11 +55,12 @@ def make_player(player_id: str, node_id: str, loco=LocoType.FREIGHT, ecu=100,
     )
 
 
-def make_game(players, phase=GamePhase.NORMAL_PLAY, deck=None) -> GameState:
+def make_game(players, phase=GamePhase.NORMAL_PLAY, deck=None, resource_supply=None) -> GameState:
     return GameState(
         map_data=MAP_DATA,
         city_index=CITY_INDEX,
         resource_index=RESOURCE_INDEX,
+        resource_supply=resource_supply if resource_supply is not None else RESOURCE_SUPPLY.copy(),
         players=players,
         current_player_index=0,
         phase=phase,
@@ -157,7 +160,7 @@ def test_build_first_from_major_city():
 run("first build from major city succeeds", test_build_first_from_major_city)
 
 def test_build_first_from_non_major_city():
-    p = make_player("p1", "r7_c21")  # clear node
+    p = make_player("p1", "r7_c21")  # clear node, no track
     gs = make_game([p])
     result = execute_build(gs, "p1", [BuildEdge("r7_c21", "r8_c21")])
     assert not result.ok, "expected error for first build from non-major-city"
@@ -251,12 +254,36 @@ run("build exceeding 20M budget fails", test_build_budget_exceeded)
 def test_build_connectivity():
     p = make_player("p1", "r19_c29", owned_edges={edge("r19_c29", "r19_c28")})
     gs = make_game([p])
-    # Try to build from a disconnected node
+    # r7_c21 is a clear node — not major_city, not in player's network
     result = execute_build(gs, "p1", [BuildEdge("r7_c21", "r8_c21")])
     assert not result.ok
-    assert "connected" in result.error.lower(), result.error
+    assert "major city" in result.error.lower(), result.error
 
-run("build disconnected from network fails", test_build_connectivity)
+run("build disconnected non-major-city node fails", test_build_connectivity)
+
+def test_build_new_branch_from_any_major_city():
+    # Player has track near London; should be able to start a new branch from Glasgow (major city)
+    # Glasgow is medium_city, not large_city — use Paris or another large_city
+    # Find a large_city that is not London
+    london_names = {"London"}
+    other_major = next(
+        (node_id, node)
+        for node_id, node in MAP_DATA.items()
+        if node.get("type") == "large_city" and node.get("city_name") not in london_names
+    )
+    other_major_id, other_major_node = other_major
+    # Find a non-large-city neighbor of that major city
+    outer_nb = next(
+        nb_id for nb_id in other_major_node["neighbors"]
+        if MAP_DATA[nb_id]["type"] not in ("large_city", "space_sea")
+    )
+    # Player has track only near London
+    p = make_player("p1", "r19_c29", ecu=100, owned_edges={edge("r19_c29", "r19_c28")})
+    gs = make_game([p])
+    result = execute_build(gs, "p1", [BuildEdge(other_major_id, outer_nb)])
+    assert result.ok, f"building from any major city should succeed: {result.error}"
+
+run("new branch from any major city (not just first build) succeeds", test_build_new_branch_from_any_major_city)
 
 def test_build_inside_major_city():
     # Both r19_c29 and r19_c30 are London large_city nodes — adjacent
@@ -546,12 +573,37 @@ run("pickup unavailable resource fails", test_pickup_wrong_resource)
 
 def test_dropoff():
     p = make_player("p1", "r19_c29", cargo=["Sheep"])
-    gs = make_game([p])
+    supply = {"Sheep": 2}
+    gs = make_game([p], resource_supply=supply)
     result = execute_operate(gs, "p1", [DropOff("Sheep")])
     assert result.ok, f"dropoff failed: {result.error}"
     assert "Sheep" not in p.train.cargo
+    assert gs.resource_supply["Sheep"] == 3  # returned to pool
 
 run("dropoff removes cargo without ECU change", test_dropoff)
+
+
+def test_pickup_supply_exhausted():
+    glasgow = "r5_c28"  # produces Sheep
+    p = make_player("p1", glasgow)
+    gs = make_game([p], resource_supply={"Sheep": 0})
+    result = execute_operate(gs, "p1", [PickUp("Sheep")])
+    assert not result.ok
+    assert "supply exhausted" in result.error.lower(), result.error
+
+run("pickup fails when global supply is 0", test_pickup_supply_exhausted)
+
+
+def test_pickup_decrements_supply():
+    glasgow = "r5_c28"  # produces Sheep
+    p = make_player("p1", glasgow)
+    initial_supply = {"Sheep": 3}
+    gs = make_game([p], resource_supply=initial_supply)
+    result = execute_operate(gs, "p1", [PickUp("Sheep")])
+    assert result.ok, f"pickup failed: {result.error}"
+    assert gs.resource_supply["Sheep"] == 2
+
+run("pickup decrements global supply", test_pickup_decrements_supply)
 
 def test_deliver():
     # Put train at Glasgow (r5_c28) with Sheep loaded

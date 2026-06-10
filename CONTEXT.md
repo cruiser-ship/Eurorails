@@ -44,7 +44,7 @@ Each node has `axial_q` (column) and `axial_r` (row) in an axial hex coordinate 
 
 Game route cards reference resources that cities produce. Two JSON files encode this mapping:
 
-- **`resources_to_cities.json`** — Each resource entry has `name`, `amount` (loading cost in ECU), and `cities` (list of producing cities). 29 resources total; amounts are 3 ECU (most) or 4 ECU (Beer, Cheese, Machinery, Oil, Wine).
+- **`resources_to_cities.json`** — Each resource entry has `name`, `amount` (global supply count — how many instances of this resource exist across the entire game), and `cities` (list of producing cities). 29 resources total; amounts are 3 (most) or 4 (Beer, Cheese, Machinery, Oil, Wine).
 - **`cities_to_resources.json`** — inverse index. Maps each city name → list of resources it produces. Includes cities with no resources (empty list: Berlin, Madrid, Milano, Paris, Roma, Venezia). Derived from `resources_to_cities.json`; must stay in sync with it.
 
 ### Route card
@@ -53,7 +53,7 @@ A game card holding exactly 3 routes. All route cards are stored in `route_cards
 
 ### Route
 
-One entry on a route card: `{city_name, resource_name, amount}`. `amount` is an integer in millions of ECU — the payout earned for delivering that resource to that city. Distinct from the resource loading cost stored in `resources_to_cities.json`.
+One entry on a route card: `{city_name, resource_name, amount}`. `amount` is an integer in millions of ECU — the payout earned for delivering that resource to that city. Distinct from the global supply count stored in `resources_to_cities.json`.
 
 When updating resource/city data, edit `resources_to_cities.json` first, then update `cities_to_resources.json` to match.
 
